@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>E2EE Secure Vault</title>
+
+  <style>
+    body {
+      font-family: Arial;
+      background: #0f172a;
+      color: white;
+      text-align: center;
+    }
+
+    .card {
+      background: #1e293b;
+      padding: 20px;
+      margin: 20px auto;
+      width: 350px;
+      border-radius: 10px;
+    }
+
+    input, textarea {
+      width: 90%;
+      padding: 10px;
+      margin: 5px;
+      border-radius: 5px;
+      border: none;
+    }
+
+    button {
+      padding: 10px 15px;
+      background: #22c55e;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #16a34a;
+    }
+
+    #notesList {
+      margin-top: 10px;
+      color: yellow;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>🔐 E2EE Secure Vault</h1>
+
+<div class="card">
+  <h3>Login / Signup</h3>
+
+  <input id="email" placeholder="Email"><br>
+  <input id="password" type="password" placeholder="Password"><br>
+
+  <button onclick="signup()">Sign Up</button>
+  <button onclick="login()">Login</button>
+  <button onclick="logout()">Logout</button>
+
+  <p id="userStatus"></p>
+</div>
+
+<div class="card">
+  <h3>Save Encrypted Note</h3>
+
+  <textarea id="note" placeholder="Write secret..."></textarea><br>
+
+  <button onclick="saveNote()">Save Encrypted</button>
+  <button onclick="loadNotes()">Load My Notes</button>
+
+  <div id="notesList"></div>
+</div>
+
+<div class="card">
+  <h3>ℹ️ About This App</h3>
+  <p>
+    This application uses <b>End-to-End Encryption (AES-GCM)</b>.
+    Your data is encrypted before reaching the server.
+    Even Firebase cannot read your notes.
+  </p>
+</div>
+
+<script type="module" src="app.js"></script>
+
+</body>
+</html>
